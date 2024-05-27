@@ -42,8 +42,8 @@
                                     <a href="{{ route('admin.technologies.show', $technology) }}"
                                         class="btn btn-primary">Show <i class="fa fa-eye" aria-hidden="true"></i></a>
 
-                                    <a href="{{-- {{ route('admin.technologies.edit', $technology) }} --}}" class="btn btn-primary">Edit <i
-                                            class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="{{ route('admin.technologies.edit', $technology) }}"
+                                        class="btn btn-primary">Edit <i class="fa-solid fa-pen-to-square"></i></a>
 
                                     <!-- Modal trigger button -->
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
@@ -74,7 +74,8 @@
                                                         data-bs-dismiss="modal">
                                                         Close
                                                     </button>
-                                                    <form action="{{-- {{ route('admin.technologys.destroy', $technology) }} --}}" method="post">
+                                                    <form action="{{ route('admin.technologies.destroy', $technology) }}"
+                                                        method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">
