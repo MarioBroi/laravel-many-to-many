@@ -61,7 +61,10 @@ class ProjectController extends Controller
 
         //dd($slug, $validated);
 
-        Project::create($validated);
+        $project = Project::create($validated);
+        if ($request->has('technologies')) {
+            $project->technologies()->attach($validated['technologies']);
+        }
 
         return to_route('admin.projects.index')->with('message', "Project $request->title created successfully");
     }
