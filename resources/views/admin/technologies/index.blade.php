@@ -4,7 +4,8 @@
     <header class="py-3 bg-primary">
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="text-white">Technologies</h1>
-            <a href="#" class="btn btn-dark"><i class="fa fa-pencil" aria-hidden="true"></i>
+            <a href="{{ route('admin.technologies.create') }}" class="btn btn-dark"><i class="fa fa-pencil"
+                    aria-hidden="true"></i>
                 Create new Technology</a>
         </div>
     </header>
@@ -96,8 +97,7 @@
                 </table>
             </div>
             <!-- /.table -->
-
-
+            {{ $technologies->links('pagination::bootstrap-5') }}
         </div>
         <!-- /.container -->
     </section>
