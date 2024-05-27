@@ -38,10 +38,10 @@
                                 <td class="text-center">{{ $technology->name }}</td>
                                 <td class="text-center">{{ $technology->slug }}</td>
                                 <td class="text-center">
-                                    <a href="{{-- {{ route('admin.technologys.show', $technology) }} --}}" class="btn btn-primary">Show <i class="fa fa-eye"
-                                            aria-hidden="true"></i></a>
+                                    <a href="{{ route('admin.technologies.show', $technology) }}"
+                                        class="btn btn-primary">Show <i class="fa fa-eye" aria-hidden="true"></i></a>
 
-                                    <a href="{{-- {{ route('admin.technologys.edit', $technology) }} --}}" class="btn btn-primary">Edit <i
+                                    <a href="{{-- {{ route('admin.technologies.edit', $technology) }} --}}" class="btn btn-primary">Edit <i
                                             class="fa-solid fa-pen-to-square"></i></a>
 
                                     <!-- Modal trigger button -->
