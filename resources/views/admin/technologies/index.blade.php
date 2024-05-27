@@ -3,16 +3,16 @@
 @section('content')
     <header class="py-3 bg-primary">
         <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="text-white">Types</h1>
-            <a href="{{ route('admin.types.create') }}" class="btn btn-dark"><i class="fa fa-pencil" aria-hidden="true"></i>
-                Create new type</a>
+            <h1 class="text-white">Technologies</h1>
+            <a href="#" class="btn btn-dark"><i class="fa fa-pencil" aria-hidden="true"></i>
+                Create new Technology</a>
         </div>
     </header>
 
     <section class="py-5 text-light">
         <div class="container">
 
-            <h3>All types</h3>
+            <h3>All technologies</h3>
 
             @if (session('message'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -32,35 +32,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($types as $type)
+                        @forelse ($technologies as $technology)
                             <tr class="">
-                                <td scope="row" class="text-center">{{ $type->id }}</td>
-                                <td class="text-center">{{ $type->name }}</td>
-                                <td class="text-center">{{ $type->slug }}</td>
+                                <td scope="row" class="text-center">{{ $technology->id }}</td>
+                                <td class="text-center">{{ $technology->name }}</td>
+                                <td class="text-center">{{ $technology->slug }}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('admin.types.show', $type) }}" class="btn btn-primary">Show <i
-                                            class="fa fa-eye" aria-hidden="true"></i></a>
+                                    <a href="{{-- {{ route('admin.technologys.show', $technology) }} --}}" class="btn btn-primary">Show <i class="fa fa-eye"
+                                            aria-hidden="true"></i></a>
 
-                                    <a href="{{ route('admin.types.edit', $type) }}" class="btn btn-primary">Edit <i
+                                    <a href="{{-- {{ route('admin.technologys.edit', $technology) }} --}}" class="btn btn-primary">Edit <i
                                             class="fa-solid fa-pen-to-square"></i></a>
 
                                     <!-- Modal trigger button -->
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#modalId-{{ $type->id }}">
+                                        data-bs-target="#modalId-{{ $technology->id }}">
                                         Delete <i class="fa-solid fa-gavel"></i>
                                     </button>
 
                                     <!-- Modal Body -->
                                     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-                                    <div class="modal fade" id="modalId-{{ $type->id }}" tabindex="-1"
+                                    <div class="modal fade" id="modalId-{{ $technology->id }}" tabindex="-1"
                                         data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-                                        aria-labelledby="modalnameId-{{ $type->id }}" aria-hidden="true">
+                                        aria-labelledby="modalnameId-{{ $technology->id }}" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
                                             role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-name" id="modalnameId-{{ $type->id }}">
-                                                        ATTENTION! Deleting : {{ $type->name }}
+                                                    <h5 class="modal-name" id="modalnameId-{{ $technology->id }}">
+                                                        ATTENTION! Deleting : {{ $technology->name }}
                                                     </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -73,8 +73,7 @@
                                                         data-bs-dismiss="modal">
                                                         Close
                                                     </button>
-                                                    <form action="{{ route('admin.types.destroy', $type) }}"
-                                                        method="post">
+                                                    <form action="{{-- {{ route('admin.technologys.destroy', $technology) }} --}}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">
@@ -97,6 +96,8 @@
                 </table>
             </div>
             <!-- /.table -->
+
+
         </div>
         <!-- /.container -->
     </section>
