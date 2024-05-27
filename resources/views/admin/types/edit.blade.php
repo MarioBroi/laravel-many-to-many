@@ -5,7 +5,7 @@
             <h1>Edit type</h1>
         </div>
     </header>
-    <div class="container py-3">
+    <div class="container text-white py-3">
 
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
