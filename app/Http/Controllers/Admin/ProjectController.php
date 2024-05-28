@@ -117,6 +117,12 @@ class ProjectController extends Controller
 
         $project->update($validated);
 
+        if ($request->has('projects')) {
+            $project->technologies()->sync($validated['technologies']);
+        } else {
+            $project->technologies()->sync([]);
+        }
+
         return to_route('admin.projects.index', $project)->with('message', "Project $project->title update successfully");
     }
 

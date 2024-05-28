@@ -24,6 +24,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title' => 'required|min:3|max:100',
             'type_id' => 'nullable|exists:types,id',
+            'technologies' => 'exists:technologies,id',
             'description' => 'nullable',
             'project_link' => 'nullable',
             'project_github' => 'nullable',

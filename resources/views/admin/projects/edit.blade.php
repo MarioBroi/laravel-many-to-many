@@ -43,7 +43,7 @@
                         <div class="form-check">
                             <input name="technologies[]" class="form-check-input" type="checkbox"
                                 value="{{ $technology->id }}" id="technology-{{ $technology->id }}"
-                                {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }} />
+                                {{ $project->technologies->contains($technology) ? 'checked' : '' }} />
                             <label class="form-check-label text-light" for="technology-{{ $technology->id }}">
                                 {{ $technology->name }} </label>
                         </div>
