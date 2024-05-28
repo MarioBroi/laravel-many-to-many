@@ -18,8 +18,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //dd(Project::all());
-        return view('admin.projects.index', ['projects' => Project::orderByDesc('id')->paginate(5)]);
+        $types = Type::all();
+        $technologies = Technology::all();
+
+        return view('admin.projects.index', ['projects' => Project::orderByDesc('id')->paginate(5)], compact('types', 'technologies'));
     }
 
     /**
@@ -131,6 +133,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+
         if ($project->project_img) {
             Storage::delete($project->project_img);
         }

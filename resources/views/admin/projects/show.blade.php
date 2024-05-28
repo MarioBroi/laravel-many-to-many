@@ -34,7 +34,15 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            Type: {{ $project->type ? $project->type->name : 'Undefined' }}
+                            <p>
+                                Type: {{ $project->type ? $project->type->name : 'Undefined' }}
+                            </p>
+                            @forelse ($project->technologies as $technology)
+                                <p class="badge bg-dark p-2">
+                                    {{ $technology->name }}
+                                </p>
+                            @empty
+                            @endforelse
                         </div>
                         <!-- /.card-footer -->
                     </div>
